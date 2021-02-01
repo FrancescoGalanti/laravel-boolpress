@@ -24,14 +24,14 @@
 
             <div class="form-group">
                 <label for="title">Post Title:</label>
-                <input  class="form-control" type="text" name="title" id="title" value="{{ old('title') }}">
+                <input  class="form-control" type="text" name="title" id="title" value="{{ old('title', $post->title) }}">
             </div>
             <div class="form-group">
                 <label for="body">Post Content:</label>
-                <textarea class="form-control" name="body" id="body" cols="30" rows="10">{{ old('body') }}</textarea>
+                <textarea class="form-control" name="body" id="body" cols="30" rows="10">{{ old('body', $post->body) }}</textarea>
             </div>
 
-            <input type="submit" class="btn btn-primary" value="Create Post">
+            <input type="submit" class="btn btn-primary" value="Edit Post">
 
         </form>
     </div>
