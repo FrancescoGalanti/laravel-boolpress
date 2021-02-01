@@ -44,7 +44,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        dd($data);
+        //dd($data);
 
         $request->validate([
             'title' => 'required',
@@ -53,6 +53,14 @@ class PostController extends Controller
 
         $data['user_id'] = Auth::id();
         $data['slug'] = Str::slug($data['title'], '-');
+
+        $newPost = new Post();
+        $newPost->fill($data);
+        $saved = $newPost->save();
+
+        if($saved){
+            return redirect()->route('admin.posts.index');
+        }
     }
 
     /**
