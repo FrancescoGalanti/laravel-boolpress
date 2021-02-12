@@ -20,7 +20,7 @@ Route::get('posts', 'PostController@index')->name('posts.index');
 Route::get('posts/{slug}', 'PostController@show')->name('posts.show');
 
 
-Auth::routes(['verify' => true]);
+Auth::routes();
 /* 
 Route::get('/home', 'HomeController@index')->name('home');
  */
